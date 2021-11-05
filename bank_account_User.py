@@ -41,17 +41,33 @@ class User:
         self.name = name
         self.email = email
         self.account = BankAccount(700, 0.05)
+    
+    def deposit(self, amount):
+        self.account.deposit(amount)
+        return self
+    
+    def withdraw(self, amount):
+        self.account.withdraw(amount)
+        return self
+
+    def display_user_balance(self):
+        self.account.display_account_info()
+
+user_001 = User("Gordo", "gordo@gmail.com")
+print(user_001.name, user_001.email, user_001.account.balance)
+user_001.deposit(500).withdraw(100).display_user_balance()
+
         
 
     
         
 
-galindo = BankAccount(100, 0.04)
-galindo.deposit(500).deposit(100).deposit(400)
-galindo.withdraw(600)
-galindo.display_account_info()
+# galindo = BankAccount(100, 0.04)
+# galindo.deposit(500).deposit(100).deposit(400)
+# galindo.withdraw(600)
+# galindo.display_account_info()
 
 
 
-luis = BankAccount(1000, 0.02)
-luis.deposit(1000).deposit(600).withdraw(100).withdraw(400).withdraw(1000).withdraw(400).yield_interest().display_account_info()
+# luis = BankAccount(1000, 0.02)
+# luis.deposit(1000).deposit(600).withdraw(100).withdraw(400).withdraw(1000).withdraw(400).yield_interest().display_account_info()
